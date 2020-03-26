@@ -21,8 +21,12 @@ app.post("/admin-dashboard", function(req, res){
           
     if(req.body.addTeacher == "submit")
     res.redirect("/add-teacher");
+
+    if(req.body.add == "added")
+    res.redirect("/admin-dashboard");
     
 });
+
 
 
 app.listen(3000, function(){
