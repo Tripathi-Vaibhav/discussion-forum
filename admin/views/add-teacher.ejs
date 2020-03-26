@@ -1,6 +1,6 @@
 <%- include("partials/header"); %>
 
-<form>
+<form method="POST" action="/admin-dashboard">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -22,7 +22,7 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div> -->
 
-    <button type="submit" class="btn btn-primary">+</button>
+    <button type="submit" class="btn btn-primary" name="add" value="added">+</button>
   </form>
 
 <%- include("partials/footer"); %>
