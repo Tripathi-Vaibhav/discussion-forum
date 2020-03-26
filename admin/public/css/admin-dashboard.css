@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: bisque;
+}
+
+h1{
+    font-size: 4rem;
+    color: crimson;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;    
+}
