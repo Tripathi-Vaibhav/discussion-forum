@@ -11,11 +11,15 @@
           <th>Contact No.</th>
         </tr>
       </thead>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>           
+
+      <% teacherList.forEach(function(teacher){ %>
+        <tr>
+            <td> <%= teacher.name %> </td>
+            <td> <%= teacher.email %> </td>
+            <td> <%= teacher.contactNo %> </td>
+          </tr>
+      <% }); %>
+                
     </table>
   </div>
 
