@@ -30,10 +30,17 @@ app.get("/add-teacher", function(req, res){
     res.render("add-teacher");
 });
 
+app.get("/view-teacher", function(req, res){
+    res.render("view-teacher");
+});
+
 app.post("/admin-dashboard", function(req, res){
           
-    if(req.body.addTeacher == "submit")
+    if(req.body.addTeacher == "add")
     res.redirect("/add-teacher");
+
+    if(req.body.viewTeacher == "view")
+    res.redirect("/view-teacher");
 
     if(req.body.add == "added"){
 
