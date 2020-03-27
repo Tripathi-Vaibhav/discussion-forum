@@ -13,6 +13,7 @@ mongoose.connect("mongodb://localhost:27017/adminDB", {useNewUrlParser: true, us
 
 const addTeacherSchema = new mongoose.Schema({
 
+    name: String,
     email: String,
     contactNo: String,
     password: String
@@ -37,12 +38,13 @@ app.post("/admin-dashboard", function(req, res){
     if(req.body.add == "added"){
 
         const newTeacher = new AddTeacher({
+            name: req.body.Name,
             email: req.body.Email,
             contactNo: req.body.Contact,
             password: req.body.Pass
         });
 
-        if(newTeacher.email == "" || newTeacher.contactNo == "" || newTeacher.password == "")
+        if(newTeacher.Name == "" || newTeacher.email == "" || newTeacher.contactNo == "" || newTeacher.password == "")
         res.redirect("/add-teacher");
 
         else{
