@@ -42,9 +42,14 @@ app.post("/admin-dashboard", function(req, res){
             password: req.body.Pass
         });
 
-        newTeacher.save(function(){
-            res.redirect("/admin-dashboard");
-        });
+        if(newTeacher.email == "" || newTeacher.contactNo == "" || newTeacher.password == "")
+        res.redirect("/add-teacher");
+
+        else{
+            newTeacher.save(function(){
+                res.redirect("/admin-dashboard");
+            });
+        }        
     }   
 });
 
