@@ -34,9 +34,18 @@ app.post("/admin-dashboard", function(req, res){
     if(req.body.addTeacher == "submit")
     res.redirect("/add-teacher");
 
-    if(req.body.add == "added")
-    res.redirect("/admin-dashboard");
-    
+    if(req.body.add == "added"){
+
+        const newTeacher = new AddTeacher({
+            email: req.body.Email,
+            contactNo: req.body.Contact,
+            password: req.body.Pass
+        });
+
+        newTeacher.save(function(){
+            res.redirect("/admin-dashboard");
+        });
+    }   
 });
 
 
