@@ -31,7 +31,10 @@ app.get("/add-teacher", function(req, res){
 });
 
 app.get("/view-teacher", function(req, res){
-    res.render("view-teacher");
+
+    AddTeacher.find(function(err, teachers){
+        res.render("view-teacher", {teacherList: teachers});
+    });    
 });
 
 app.post("/admin-dashboard", function(req, res){
