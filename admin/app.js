@@ -22,28 +22,28 @@ const addTeacherSchema = new mongoose.Schema({
 const AddTeacher = mongoose.model("AddTeacher", addTeacherSchema);
 
 
-app.get("/admin-dashboard", function(req, res){
+app.get("/admin/admin-dashboard", function(req, res){
     res.render("admin-dashboard");
 });
 
-app.get("/add-teacher", function(req, res){
+app.get("/admin/add-teacher", function(req, res){
     res.render("add-teacher");
 });
 
-app.get("/view-teacher", function(req, res){
+app.get("/admin/view-teacher", function(req, res){
 
     AddTeacher.find(function(err, teachers){
         res.render("view-teacher", {teacherList: teachers});
     });    
 });
 
-app.post("/admin-dashboard", function(req, res){
+app.post("/admin/admin-dashboard", function(req, res){
           
     if(req.body.addTeacher == "add")
-    res.redirect("/add-teacher");
+    res.redirect("/admin/add-teacher");
 
     if(req.body.viewTeacher == "view")
-    res.redirect("/view-teacher");
+    res.redirect("/admin/view-teacher");
 
     if(req.body.add == "added"){
 
@@ -55,11 +55,11 @@ app.post("/admin-dashboard", function(req, res){
         });
 
         if(newTeacher.Name == "" || newTeacher.email == "" || newTeacher.contactNo == "" || newTeacher.password == "")
-        res.redirect("/add-teacher");
+        res.redirect("admin/add-teacher");
 
         else{
             newTeacher.save(function(){
-                res.redirect("/admin-dashboard");
+                res.redirect("/admin/admin-dashboard");
             });
         }        
     }   
