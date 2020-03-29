@@ -19,7 +19,21 @@ const addTeacherSchema = new mongoose.Schema({
     password: String
 });
 
+const adminLoginSchema = new mongoose.Schema({
+
+    username: String,
+    pass: String
+});
+
 const AddTeacher = mongoose.model("AddTeacher", addTeacherSchema);
+const AdminLogin = mongoose.model("AdminLogin", adminLoginSchema);
+
+// const login = new AdminLogin({
+//     username: "qwerty",
+//     pass: "789456123"
+// });
+
+// login.save();
 
 app.get("/", function(req, res){
     res.render("index");
