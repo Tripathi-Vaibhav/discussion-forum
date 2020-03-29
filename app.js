@@ -25,6 +25,10 @@ app.get("/", function(req, res){
     res.render("index");
 });
 
+app.get("/admin-login", function(req, res){
+    res.render("admin-login");
+});
+
 app.get("/admin-dashboard", function(req, res){
     res.render("admin-dashboard");
 });
@@ -39,6 +43,13 @@ app.get("/view-teacher", function(req, res){
         res.render("view-teacher", {teacherList: teachers});
     });    
 });
+
+app.post("/admin-login", function(req, res){
+
+    if(req.body.admin == "Admin")
+    res.redirect("/admin-login");
+});
+
 
 app.post("/admin-dashboard", function(req, res){
           
