@@ -51,13 +51,7 @@ app.post("/admin-login", function(req, res){
 });
 
 
-app.post("/admin-dashboard", function(req, res){
-          
-    if(req.body.addTeacher == "add")
-    res.redirect("/add-teacher");
-
-    if(req.body.viewTeacher == "view")
-    res.redirect("/view-teacher");
+app.post("/admin-dashboard", function(req, res){ 
 
     if(req.body.add == "added"){
 
@@ -77,6 +71,16 @@ app.post("/admin-dashboard", function(req, res){
             });
         }        
     }   
+});
+
+app.post("/add-teacher", function(req, res){
+    if(req.body.addTeacher == "add")
+    res.redirect("/add-teacher");
+});
+
+app.post("/view-teacher", function(req, res){
+    if(req.body.viewTeacher == "view")
+    res.redirect("/view-teacher");
 });
 
 
