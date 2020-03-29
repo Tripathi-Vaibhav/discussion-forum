@@ -58,10 +58,11 @@ app.get("/view-teacher", function(req, res){
     });    
 });
 
-app.post("/admin-login", function(req, res){
 
+app.post("/admin-login", function(req, res){ 
+    
     if(req.body.admin == "Admin")
-    res.redirect("/admin-login");
+    res.redirect("/admin-login");    
 });
 
 
@@ -84,7 +85,25 @@ app.post("/admin-dashboard", function(req, res){
                 res.redirect("/admin-dashboard");
             });
         }        
-    }   
+    }
+
+        AdminLogin.findOne({}, function(err, adminCredentials){
+            if(err)
+            console.log(err);
+
+            else{
+                if(adminCredentials.username == req.body.user && adminCredentials.pass == req.body.pass){          
+                   if(req.body.submit == "login")
+                   res.redirect("/admin-dashboard");
+                }               
+
+                else{                    
+                    console.log("Invalid Credentials!");                    
+                    res.redirect("/admin-login");
+                }
+            }            
+        });        
+     
 });
 
 app.post("/add-teacher", function(req, res){
