@@ -1,5 +1,8 @@
 <%- include("partials/header"); %>
 
-<input type="button" value="Admin" style="float: right;">
+<form action="/admin-login" method="POST">
+    <input type="submit" name="admin" value="Admin">
+</form>
 
-<%- include("partials/header"); %>
+
+<%- include("partials/footer"); %>
