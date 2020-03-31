@@ -58,6 +58,10 @@ app.get("/view-teacher", function(req, res){
     });    
 });
 
+app.get("/teacher", function(req, res){
+    res.render("teachers/teacher");
+});
+
 
 app.post("/admin-login", function(req, res){ 
     
