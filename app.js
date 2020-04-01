@@ -40,21 +40,21 @@ app.get("/", function(req, res){
 });
 
 app.get("/admin-login", function(req, res){
-    res.render("admin-login");
+    res.render("admin/admin-login");
 });
 
 app.get("/admin-dashboard", function(req, res){
-    res.render("admin-dashboard");
+    res.render("admin/admin-dashboard");
 });
 
 app.get("/add-teacher", function(req, res){
-    res.render("add-teacher");
+    res.render("admin/add-teacher");
 });
 
 app.get("/view-teacher", function(req, res){
 
     AddTeacher.find(function(err, teachers){
-        res.render("view-teacher", {teacherList: teachers});
+        res.render("admin/view-teacher", {teacherList: teachers});
     });    
 });
 
@@ -63,16 +63,16 @@ app.get("/teacher", function(req, res){
 });
 
 
-app.post("/admin-login", function(req, res){ 
+// app.post("/admin-login", function(req, res){ 
     
-    if(req.body.admin == "Admin")
-    res.redirect("/admin-login");    
-});
+//     if(req.body.admin == "Admin")
+//     res.redirect("/admin-login");    
+// });
 
 
 app.post("/admin-dashboard", function(req, res){ 
 
-    if(req.body.add == "added"){
+    if(req.body.submit == "Add"){
 
         const newTeacher = new AddTeacher({
             name: req.body.Name,
@@ -97,7 +97,7 @@ app.post("/admin-dashboard", function(req, res){
 
             else{
                 if(adminCredentials.username == req.body.user && adminCredentials.pass == req.body.pass){          
-                   if(req.body.submit == "login")
+                   if(req.body.Submit == "Login")
                    res.redirect("/admin-dashboard");
                 }               
 
@@ -110,15 +110,15 @@ app.post("/admin-dashboard", function(req, res){
      
 });
 
-app.post("/add-teacher", function(req, res){
-    if(req.body.addTeacher == "add")
-    res.redirect("/add-teacher");
-});
+// app.post("/add-teacher", function(req, res){
+//     if(req.body.addTeacher == "add")
+//     res.redirect("/add-teacher");
+// });
 
-app.post("/view-teacher", function(req, res){
-    if(req.body.viewTeacher == "view")
-    res.redirect("/view-teacher");
-});
+// app.post("/view-teacher", function(req, res){
+//     if(req.body.viewTeacher == "view")
+//     res.redirect("/view-teacher");
+// });
 
 
 

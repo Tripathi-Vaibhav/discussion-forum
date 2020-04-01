@@ -1,14 +1,16 @@
 <%- include("../partials/header"); %>
    
+<link rel="stylesheet" href="/css/index.css">
+
    <h1> Welcome to admin panel </h1>
 
-   <form method="POST" action="/add-teacher">
-      <button type="submit" name="addTeacher" value="add">Add teacher</button>
-   </form>
+   <div class="dropdown">
+      <a href="/add-teacher"><button class="dropbtn">Add teacher</button></a>
+   </div>
 
-   <form method="POST" action="/view-teacher">      
-      <button type="submit" name="viewTeacher" value="view">View teacher</button>
-   </form>
+   <div class="dropdown">
+      <a href="/view-teacher"><button class="dropbtn">View teacher</button></a>
+   </div>
    
 
 <%- include("../partials/footer"); %>
