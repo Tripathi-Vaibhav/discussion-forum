@@ -1,0 +1,14 @@
+<%- include("../partials/header"); %>
+
+<link rel="stylesheet" href="/css/login-form.css">
+  <div>
+    <form action="/admin-dashboard" method="POST">      
+      <input type="text" id="fname" name="user" placeholder="Your Name">
+        <br>     
+      <input type="password" id="lname" name="pass" placeholder="Your Password">
+        <br>
+      <input type="submit" name="Submit" value="Login">
+    </form>
+  </div>
+
+<%- include("../partials/footer"); %>
