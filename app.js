@@ -62,12 +62,9 @@ app.get("/teacher", function(req, res){
     res.render("teachers/teacher");
 });
 
-
-// app.post("/admin-login", function(req, res){ 
-    
-//     if(req.body.admin == "Admin")
-//     res.redirect("/admin-login");    
-// });
+app.get("/view-student", function(req, res){
+    res.render("admin/student");
+});
 
 
 app.post("/admin-dashboard", function(req, res){ 
@@ -106,19 +103,8 @@ app.post("/admin-dashboard", function(req, res){
                     res.redirect("/admin-login");
                 }
             }            
-        });        
-     
+        });     
 });
-
-// app.post("/add-teacher", function(req, res){
-//     if(req.body.addTeacher == "add")
-//     res.redirect("/add-teacher");
-// });
-
-// app.post("/view-teacher", function(req, res){
-//     if(req.body.viewTeacher == "view")
-//     res.redirect("/view-teacher");
-// });
 
 
 
