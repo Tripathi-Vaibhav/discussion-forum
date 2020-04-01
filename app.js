@@ -27,11 +27,16 @@ const adminLoginSchema = new mongoose.Schema({
 
 const addNewStudentSchema = new mongoose.Schema({
 
-
+    name: String,
+    email: String,
+    contactNo: String,
+    roll: String,
+    password: String
 });
 
 const AddTeacher = mongoose.model("AddTeacher", addTeacherSchema);
 const AdminLogin = mongoose.model("AdminLogin", adminLoginSchema);
+const AddNewStudent = mongoose.model("AddNewStudent", addNewStudentSchema);
 
 // const login = new AdminLogin({
 //     username: "qwerty",
@@ -71,14 +76,38 @@ app.get("/view-student", function(req, res){
     res.render("admin/student");
 });
 
-app.get("/student-login", function(req, res){
-    res.render("students/student-login");
+app.get("/student-register", function(req, res){
+    res.render("students/student-register");
+});
+
+
+app.post("/", function(req, res){
+
+    if(req.body.submit == "add-student"){
+
+        const newStudent = new AddNewStudent({
+            name: req.body.Name,
+            email: req.body.Email,
+            contactNo: req.body.Contact,
+            roll: req.body.Roll,
+            password: req.body.Pass
+        });
+
+        if(newStudent.Name == "" || newStudent.email == "" || newStudent.contactNo == "" || newStudent.password == "" || newStudent.roll == "")
+        res.redirect("/student-register");
+
+        else{
+            newStudent.save(function(){
+                res.redirect("/");
+            });
+        }        
+    }
 });
 
 
 app.post("/admin-dashboard", function(req, res){ 
 
-    if(req.body.submit == "Add"){
+    if(req.body.submit == "add-teacher"){
 
         const newTeacher = new AddTeacher({
             name: req.body.Name,
@@ -112,7 +141,7 @@ app.post("/admin-dashboard", function(req, res){
                     res.redirect("/admin-login");
                 }
             }            
-        });     
+        });       
 });
 
 
