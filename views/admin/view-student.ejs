@@ -10,12 +10,18 @@
     <th>E-mail</th>
     <th>Contact</th>
   </tr>
-  <tr>
-    <td>Peter</td>
-    <td>Griffin</td>
-    <td>$100</td>
-    <td>$100</td>
-  </tr>
+
+  <% registeredStudents.forEach(function(newStudent){ %>
+
+      <tr>
+        <td><%= newStudent.name %></td>
+        <td><%= newStudent.roll %></td>
+        <td><%= newStudent.email %></td>
+        <td><%= newStudent.contactNo %></td>
+      </tr>
+
+  <% }); %>
+  
   
 </table>
 
