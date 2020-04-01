@@ -1,9 +1,10 @@
 <%- include("../partials/header"); %>
 
 <link rel="stylesheet" href="/css/tables.css">
-<h2>Registered Students</h2>
+<h1>Registered Students</h1>
 
-<table>
+<div class="container">
+    <table>
   <tr>
     <th>Name</th>
     <th>Enrollment No.</th>
@@ -20,10 +21,9 @@
         <td><%= newStudent.contactNo %></td>
       </tr>
 
-  <% }); %>
-  
+  <% }); %>  
   
 </table>
-
+</div>
 
 <%- include("../partials/footer"); %>

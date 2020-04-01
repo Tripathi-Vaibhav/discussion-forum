@@ -3,23 +3,26 @@
 <link rel="stylesheet" href="/css/tables.css">
 
 <h1>Teacher's List</h1>
-<table>
-  <tr>
-    <th>Name</th>    
-    <th>E-mail</th>
-    <th>Contact</th>
-  </tr>
 
-  <% teacherList.forEach(function(teacher){ %>
-      <tr>
-        <td> <%= teacher.name %> </td>
-        <td> <%= teacher.email %> </td>
-        <td> <%= teacher.contactNo %> </td>
-      </tr>
-
-  <% }); %>  
+<div class="container">
+  <table>
+    <tr>
+      <th>Name</th>    
+      <th>E-mail</th>
+      <th>Contact</th>
+    </tr>
   
-</table>
+    <% teacherList.forEach(function(teacher){ %>
+        <tr>
+          <td> <%= teacher.name %> </td>
+          <td> <%= teacher.email %> </td>
+          <td> <%= teacher.contactNo %> </td>
+        </tr>
+  
+    <% }); %>  
+    
+  </table>
+</div>
 
 
 <%- include("../partials/footer"); %>
