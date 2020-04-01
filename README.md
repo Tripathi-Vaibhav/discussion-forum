@@ -1,5 +1,7 @@
 ## Discussion-forum
 
+------------ 
+
 ### Tech
 
 * FrontEnd
@@ -10,6 +12,7 @@
   *  NodeJS
   * mongoose
 
+------------
 
 ### Dependancies
 
@@ -18,6 +21,7 @@
 * ejs
 * body-parser
 
+------------
 
 ### Quick Setup
 
@@ -28,13 +32,15 @@
 * install dependancies (if not present in `package.json`) and run `npm i express ejs body-parser` to add them
 * install [robo 3T](https://robomongo.org/download) (a graphical form for monodb CRUD operations)
 
+------------
 
-#### mongodb setup
+### Database setup
 
 * Install [mongodb](https://www.mongodb.com/download-center/community) 
 * Follow this [article](https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514) to install mongodb on windows.
 * run `mongo --version` to check if mongodb installed successfully 
 
+------------
 
 ### For the first time
 
@@ -49,6 +55,8 @@
 * check inside `adminDB` database and inside it `adminlogins` collections
 * right click and go to `view documents`
 * admin credentials must be present
+
+------------
 
 ### Quick instructions after every launch
 
