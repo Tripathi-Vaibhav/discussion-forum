@@ -1,0 +1,20 @@
+<%- include("../partials/header"); %>
+
+<link rel="stylesheet" href="/css/login-form.css">
+<div>
+    <form action="/admin-dashboard" method="POST">      
+      <input type="text" id="fname" name="Name" placeholder="Name" required>
+        <br>     
+      <input type="email" id="lname" name="Email" placeholder="E-mail" required>
+        <br>
+      <input type="tel" id="lname" name="Contact" placeholder="Contact" required>
+        <br>
+      <input type="text" id="lname" name="Roll" placeholder="College Enrollment no." required>
+        <br>
+      <input type="password" id="lname" name="Pass" placeholder="Password" required>
+        <br>
+      <input type="submit" name="submit" value="Add">
+    </form>
+  </div>
+
+<%- include("../partials/footer"); %>
