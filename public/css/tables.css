@@ -15,8 +15,3 @@ table {
     background-color: #f4511e;
     color: white;
   }
-
-  tr:hover {
-    background-color: rgb(250, 143, 143);
-    color: rgb(255, 255, 255);
-  }
