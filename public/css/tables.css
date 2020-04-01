@@ -8,9 +8,15 @@ table {
     padding: 8px;
   }
   
-  tr:nth-child(even){background-color: #f2f2f2}
+  tr:nth-child(even){background-color: #dad6d6}
+  tr:nth-child(odd){background-color: #fff3f3}
   
   th {
     background-color: #f4511e;
     color: white;
+  }
+
+  tr:hover {
+    background-color: rgb(250, 143, 143);
+    color: rgb(255, 255, 255);
   }
