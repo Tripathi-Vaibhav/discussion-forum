@@ -73,7 +73,10 @@ app.get("/teacher", function(req, res){
 });
 
 app.get("/view-student", function(req, res){
-    res.render("admin/student");
+
+    AddNewStudent.find(function(err, students){
+        res.render("admin/view-student", {registeredStudents: students});
+    });    
 });
 
 app.get("/student-register", function(req, res){
