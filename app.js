@@ -25,12 +25,17 @@ const adminLoginSchema = new mongoose.Schema({
     pass: String
 });
 
+const addNewStudentSchema = new mongoose.Schema({
+
+
+});
+
 const AddTeacher = mongoose.model("AddTeacher", addTeacherSchema);
 const AdminLogin = mongoose.model("AdminLogin", adminLoginSchema);
 
 // const login = new AdminLogin({
 //     username: "qwerty",
-//     pass: "789456123"
+//     pass: "0"
 // });
 
 // login.save();
@@ -64,6 +69,10 @@ app.get("/teacher", function(req, res){
 
 app.get("/view-student", function(req, res){
     res.render("admin/student");
+});
+
+app.get("/student-login", function(req, res){
+    res.render("students/student-login");
 });
 
 
