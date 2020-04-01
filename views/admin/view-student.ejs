@@ -10,6 +10,7 @@
     <th>Enrollment No.</th>
     <th>E-mail</th>
     <th>Contact</th>
+    <th colspan="2">Admin's Approval</th>
   </tr>
 
   <% registeredStudents.forEach(function(newStudent){ %>
@@ -19,6 +20,8 @@
         <td><%= newStudent.roll %></td>
         <td><%= newStudent.email %></td>
         <td><%= newStudent.contactNo %></td>
+        <td><button class="btn btn-sm btn-success">Accept</button></td>
+        <td><button class="btn btn-sm btn-danger">Decline</button></td>
       </tr>
 
   <% }); %>  
