@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/adminDB", {useNewUrlParser: true, useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://admin-vaibhav:discussion@cluster0-750gz.mongodb.net/adminDB", {useNewUrlParser: true, useUnifiedTopology:true});
 
 const addTeacherSchema = new mongoose.Schema({
 
