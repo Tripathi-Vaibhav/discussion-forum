@@ -34,9 +34,19 @@ const addNewStudentSchema = new mongoose.Schema({
     password: String
 });
 
+const acceptedStudentSchema = new mongoose.Schema({
+
+    name: String,
+    email: String,
+    contactNo: String,
+    roll: String,
+    password: String    
+});
+
 const AddTeacher = mongoose.model("AddTeacher", addTeacherSchema);
 const AdminLogin = mongoose.model("AdminLogin", adminLoginSchema);
 const AddNewStudent = mongoose.model("AddNewStudent", addNewStudentSchema);
+const AcceptNewStudent = mongoose.model("AcceptNewStudent", acceptedStudentSchema);
 
 // const login = new AdminLogin({
 //     username: "qwerty",
@@ -129,6 +139,7 @@ app.post("/admin-dashboard", function(req, res){
         }        
     }
 
+    else{
         AdminLogin.findOne({}, function(err, adminCredentials){
             if(err)
             console.log(err);
@@ -144,7 +155,29 @@ app.post("/admin-dashboard", function(req, res){
                     res.redirect("/admin-login");
                 }
             }            
-        });       
+        }); 
+    }              
+});
+
+app.post("/view-student", function(req, res){
+
+    const studentID = req.body.accept;
+
+    AddNewStudent.findById(studentID, function(err, student){
+        const acceptedStudent = new AcceptNewStudent({
+            name: student.name,
+            email: student.email,
+            contactNo: student.contactNo,
+            roll: student.roll,
+            password: student.password  
+        });
+
+        acceptedStudent.save(function(){
+            console.log("Successfully added document");
+            
+        });
+    });
+    
 });
 
 
