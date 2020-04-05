@@ -13,18 +13,20 @@
     <th colspan="2">Admin's Approval</th>
   </tr>
 
-  <% registeredStudents.forEach(function(newStudent){ %>
+  <form action="/view-student" method="POST">
+    <% registeredStudents.forEach(function(newStudent){ %>
 
       <tr>
         <td><%= newStudent.name %></td>
         <td><%= newStudent.roll %></td>
         <td><%= newStudent.email %></td>
         <td><%= newStudent.contactNo %></td>
-        <td><button class="btn btn-sm btn-success">Accept</button></td>
-        <td><button class="btn btn-sm btn-danger">Decline</button></td>
+        <td><button class="btn btn-sm btn-success" type="submit" name="accept" value=<%= newStudent._id %>>Accept</button></td>
+        <td><button class="btn btn-sm btn-danger" type="submit" name="delete" value=<%= newStudent._id %>>Decline</button></td>
       </tr>
 
-  <% }); %>  
+  <% }); %>
+  </form> 
   
 </table>
 </div>
